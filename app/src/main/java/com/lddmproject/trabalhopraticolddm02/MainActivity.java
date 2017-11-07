@@ -13,6 +13,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -41,6 +43,34 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        View navigationHeader = navigationView.getHeaderView(0);
+
+        //ImageView for add an subject
+        final ImageView addSubjectButton = (ImageView)navigationHeader.findViewById(R.id.addSubjectButton);
+        addSubjectButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                FragmentManager fragmentManager = getFragmentManager();
+
+                fragmentManager.beginTransaction()
+                        .replace(R.id.content_frame
+                                , new AddSubject( ))
+                        .commit();
+
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.closeDrawer(GravityCompat.START);
+            }
+
+        });
+
+        /* Future Uses
+        View header = navigationView.getHeaderView(0);
+        TextView mNameTextView = (TextView) header.findViewById(R.id.userNameMenu);
+        mNameTextView.setText("XYZ");
+        */
+
     }
 
     @Override

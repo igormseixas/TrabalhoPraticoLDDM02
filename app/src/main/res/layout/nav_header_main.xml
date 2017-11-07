@@ -19,7 +19,7 @@
         android:baselineAligned="false">
 
         <ImageView
-            android:id="@+id/photoUser"
+            android:id="@+id/userPhoto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -27,11 +27,12 @@
             app:srcCompat="@android:drawable/sym_def_app_icon" />
 
         <ImageView
-            android:id="@+id/addSubject"
+            android:id="@+id/addSubjectButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:scaleType="fitEnd"
+            android:clickable="true"
             app:srcCompat="@android:drawable/ic_menu_add" />
 
     </LinearLayout>
@@ -45,7 +46,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
-        android:id="@+id/userLastNameMenu"
+        android:id="@+id/userEmailMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/user_email_menu" />
